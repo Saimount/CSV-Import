@@ -1,7 +1,7 @@
 CSV-Import
 ==========
 
-##Initialisation
+##Initialization
 Initialize database with `src/sql/products.sql`
 
 ##Usage
