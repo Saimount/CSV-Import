@@ -1,0 +1,6 @@
+product_code;product_name;product_variant;variant_code;price;quantity
+ORDI1;Laptop;;;1000;100
+ORDI2;Desktop;;;1500;50
+PULL1;Pull en V;rouge;PULL1_R;50;3
+PULL1;Pull en V;vert;PULL1_V;45;30
+PULL1;Pull en V;bleu;PULL1_B;45;25
