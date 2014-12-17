@@ -2,11 +2,9 @@
 
 class ImportTest extends PHPUnit_Framework_TestCase {
 
-    // only instantiate pdo once for test clean-up/fixture load
     public static $pdo = null;
 
-    // only instantiate PHPUnit_Extensions_Database_DB_IDatabaseConnection once per test
-
+    // Called at begin of tests
     public static function setUpBeforeClass()
     {
         if (self::$pdo == null) {

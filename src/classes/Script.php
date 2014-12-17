@@ -12,6 +12,9 @@ class Script {
         \cli\line( "Début du script: ".date("H:i:s", $this->timestart) );
     }
 
+    /*
+     * Cli output methods
+     * */
     public function notice( $msg ) {
         \cli\line('%G' . $msg . '%n');
     }
@@ -23,7 +26,10 @@ class Script {
     public function error( $msg ) {
         \cli\line('%R' . $msg . '%n');
     }
-
+    
+    /**
+     * Display execution time
+     */
     public function __destruct() {
         $timeend=microtime(true);
         $time=$timeend-$this->timestart;

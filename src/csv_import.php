@@ -86,11 +86,12 @@ try {
     } else {
         throw new Exception( "File is required." );
     }
-    /*
-     * Start script
-     * */
 
+    /*
+     * Import
+     * */
     try {
+        // Create db connexion
         $pdo = new PdoManager(
             $user,
             $password,
@@ -101,8 +102,12 @@ try {
                 PDO::MYSQL_ATTR_FOUND_ROWS => false
             )
         );
+
+        // Import from file
         $import = new Import( $pdo );
         $result = $import->importFromCSV( $file, 'products', $delimiter );
+
+        // Display import informations
         $script->notice( "Affected rows : " . $result['rows'] );
         $script->notice( "Query execution time : " . $result['execution_time'] . ' sec' );
     } catch( PDOException $e ) {

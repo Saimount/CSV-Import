@@ -9,8 +9,11 @@ class PdoManager {
     protected $db;
 
     public function __construct( $user, $password, $database, $host='localhost', $options=array(PDO::MYSQL_ATTR_LOCAL_INFILE=>1) ) {
+        // Create db connexion
         $dsn = "mysql:host=$host;dbname=$database";
         $this->db = new PDO( $dsn, $user, $password, $options );
+
+        // Enable PDOException mode
         $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 

@@ -12,6 +12,7 @@ class Import {
 
     public function importFromCSV( $file, $table, $delimiter=';' ) {
         if ( is_readable( $file ) ) {
+            // Import csv file into table
             $query = "LOAD DATA LOCAL INFILE :file REPLACE INTO TABLE " . $table . " FIELDS TERMINATED BY :delimiter IGNORE 1 LINES;";
             $result = $this->pdo->query( $query,
                 array(
