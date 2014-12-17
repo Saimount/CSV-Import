@@ -78,7 +78,7 @@ try {
         throw new Exception( "MySQL user is required.");
     }
     if ( isset( $arguments['password'] ) ) {
-        $password = explode( ' ', $arguments['password'] )[0];
+        $password = $arguments['password'];
     } else {
         throw new Exception( "MySQL password is required.");
     }
@@ -103,7 +103,7 @@ try {
 }
 
 
-$query = "LOAD DATA LOCAL INFILE '" . $file . "' REPLACE INTO TABLE products FIELDS TERMINATED BY ',' IGNORE 1 LINES;\"; ";
+$query = "LOAD DATA LOCAL INFILE '" . $file . "' REPLACE INTO TABLE products FIELDS TERMINATED BY ';' IGNORE 1 LINES;\"; ";
 
 /*$dsn = "mysql:host=$host;dbname=$database";
 $pdo = new PDO($dsn, $user, $password, array(PDO::MYSQL_ATTR_LOCAL_INFILE=>1));
